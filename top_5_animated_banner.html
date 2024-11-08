@@ -1,0 +1,95 @@
+<!-- BANNER -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --gap: 4rem;
+            --banner-height: 200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .marquee-banner {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: var(--banner-height);
+            background: #E6E6E6;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .marquee {
+            overflow: hidden;
+            user-select: none;
+            display: flex;
+            gap: var(--gap);
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            transform: translateY(-50%) rotate(-4deg);
+            padding: 40px 0;
+        }
+
+        .marquee ul {
+            list-style: none;
+            flex-shrink: 0;
+            min-width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--gap);
+            animation: marquee 8s linear infinite;
+            padding: 0;
+            margin: 0;
+        }
+
+        .marquee-text {
+            font-weight: 700;
+            font-size: 8rem;
+            font-family: 'Karla', sans-serif;
+            text-transform: uppercase;
+            color: #212121;
+        }
+
+        @keyframes marquee {
+            to {
+                transform: translateX(calc(-100% - var(--gap)));
+            }
+        }
+
+        @media only screen and (max-width: 1200px) {
+            .marquee-text {
+                font-size: 6rem;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .marquee-text {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="marquee-banner">
+        <div class="marquee">
+            <ul>
+                <li><span class="marquee-text">  Top 5 Challenge</span></li>
+            </ul>
+            <ul aria-hidden="true">
+                <li><span class="marquee-text">  Top 5 Challenge</span></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
