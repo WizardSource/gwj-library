@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Workout Types</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #000;
+        }
+
+        .scroll-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 1024px;
+            background-color: #fff;
+            border-radius: 40px;
+            padding: 40px 20px;
+            box-shadow: 
+                0 0 0 2px #000,
+                0 0 0 4px #e2e2e2,
+                0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 40px auto;
+        }
+
+        .scroll-row-wrapper {
+            position: relative;
+            overflow: hidden;
+            margin: 0 -20px;
+            padding: 0 20px;
+        }
+
+        .scroll-content {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .scroll-content h2 {
+            font-size: 1.8rem;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .scroll-content p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .scroll-rows {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .scroll-images {
+            display: flex;
+            gap: 20px;
+            width: max-content;
+        }
+
+        .row-1 {
+            animation: scroll1 25s linear infinite;
+        }
+
+        .row-2 {
+            animation: scroll2 35s linear infinite;
+        }
+
+        .scroll-item {
+            text-align: center;
+            flex: 0 0 150px;
+        }
+
+        .row-1 .scroll-item img {
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .row-2 .scroll-item {
+            flex: 0 0 200px;
+        }
+
+        .row-2 .scroll-item img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .scroll-item p {
+            font-size: 1rem;
+            color: #000;
+            margin-top: 10px;
+        }
+
+        @keyframes scroll1 {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-150px * 6 - 20px * 6));
+            }
+        }
+
+        @keyframes scroll2 {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-200px * 6 - 20px * 6));
+            }
+        }
+
+        .scroll-images::before,
+        .scroll-images::after {
+            display: none;
+        }
+
+        .tablet-container {
+            position: relative;
+            padding: 40px;
+            max-width: 1124px;
+            margin: 0 auto;
+        }
+
+        .tablet-camera {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 8px;
+            background: #333;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .row-1 .scroll-item img {
+                width: 120px;
+            }
+
+            .row-2 .scroll-item img {
+                width: 160px;
+            }
+
+            .scroll-item p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .row-1 .scroll-item img {
+                width: 100px;
+            }
+
+            .row-2 .scroll-item img {
+                width: 140px;
+            }
+
+            .scroll-item p {
+                font-size: 0.8rem;
+            }
+        }
+
+        .scroll-row-wrapper::before,
+        .scroll-row-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 100px;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .scroll-row-wrapper::before {
+            left: 0;
+            background: linear-gradient(to right, #fff 0%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        .scroll-row-wrapper::after {
+            right: 0;
+            background: linear-gradient(to left, #fff 0%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        @media (max-width: 1124px) {
+            .scroll-container {
+                max-width: 90vw;
+            }
+            
+            .tablet-container {
+                max-width: calc(90vw + 100px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Scrolling Images Section -->
+    <div class="tablet-container">
+        <div class="tablet-camera"></div>
+        <div class="scroll-container">
+            <!-- Static Text Section inside the white box -->
+            <div class="scroll-content">
+                <h2>Choose your activity.</h2>
+                <p>12 different workout types, and Meditation too. With new sessions added every week. Explore the world’s largest library of 4K Ultra HD fitness and wellness content.</p>
+            </div>
+            
+            <!-- Scroll Rows -->
+            <div class="scroll-rows">
+                <!-- First row of images (faster scroll, smaller size) -->
+                <div class="scroll-images row-1">
+                    <div class="scroll-item">
+                        <img src="https://www.apple.com/v/apple-fitness-plus/aa/images/overview/activity/activities_gallery_yoga__bl7mcu8pgjw2_large_2x.jpg" alt="Yoga">
+                        <p>Yoga</p>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="https://www.apple.com/v/apple-fitness-plus/aa/images/overview/activity/activities_gallery_core__gd96bjrdpdqy_large_2x.jpg" alt="Core">
+                        <p>Core</p>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="https://www.apple.com/v/apple-fitness-plus/aa/images/overview/activity/activities_gallery_dance__d1oamal63pg2_large_2x.jpg" alt="Dance">
+                        <p>Dance</p>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="https://www.apple.com/v/apple-fitness-plus/aa/images/overview/activity/activities_gallery_pilates__fv7kq6bqhuy6_large_2x.jpg" alt="Pilates">
+                        <p>Pilates</p>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="https://www.apple.com/v/apple-fitness-plus/aa/images/overview/activity/activities_gallery_strength__chcx105ay7v6_large_2x.jpg" alt="Strength">
+                        <p>Strength</p>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="https://www.apple.com/v/apple-fitness-plus/aa/images/overview/activity/activities_gallery_meditation__q2zw8qblbfmi_large_2x.jpg" alt="Meditation">
+                        <p>Meditation</p>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="https://www.apple.com/v/apple-fitness-plus/aa/images/overview/activity/activities_gallery_yoga__bl7mcu8pgjw2_large_2x.jpg" alt="Yoga">
+                        <p>Yoga</p>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="https://www.apple.com/v/apple-fitness-plus/aa/images/overview/activity/activities_gallery_core__gd96bjrdpdqy_large_2x.jpg" alt="Core">
+                        <p>Core</p>
+                    </div>
+                </div>
+
+                <!-- Second row of images (slower scroll, larger size) -->
+                <div class="scroll-images row-2">
+                    <div class="scroll-item">
+                        <img src="https://www.apple.com/v/apple-fitness-plus/aa/images/overview/activity/activities_gallery_mindful_cooldown__eu2qz44d5ymq_large_2x.jpg" alt="Cooldown">
+                        <p>Cooldown</p>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="https://www.apple.com/v/apple-fitness-plus/aa/images/overview/activity/activities_gallery_hiit__cisagezhqbde_large_2x.jpg" alt="HIIT">
+                        <p>HIIT</p>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="https://www.apple.com/v/apple-fitness-plus/aa/images/overview/activity/activities_gallery_yoga__bl7mcu8pgjw2_large_2x.jpg" alt="Yoga">
+                        <p>Yoga</p>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="https://www.apple.com/v/apple-fitness-plus/aa/images/overview/activity/activities_gallery_rowing__gj8h4l3vnhyu_large_2x.jpg" alt="Rowing">
+                        <p>Rowing</p>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="https://www.apple.com/v/apple-fitness-plus/aa/images/overview/activity/activities_gallery_strength__chcx105ay7v6_large_2x.jpg" alt="Strength">
+                        <p>Strength</p>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="https://www.apple.com/v/apple-fitness-plus/aa/images/overview/activity/activities_gallery_core__gd96bjrdpdqy_large_2x.jpg" alt="Core">
+                        <p>Core</p>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="https://www.apple.com/v/apple-fitness-plus/aa/images/overview/activity/activities_gallery_mindful_cooldown__eu2qz44d5ymq_large_2x.jpg" alt="Cooldown">
+                        <p>Cooldown</p>
+                    </div>
+                    <div class="scroll-item">
+                        <img src="https://www.apple.com/v/apple-fitness-plus/aa/images/overview/activity/activities_gallery_hiit__cisagezhqbde_large_2x.jpg" alt="HIIT">
+                        <p>HIIT</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

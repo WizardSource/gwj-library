@@ -1,0 +1,198 @@
+<!-- EMAIL AND IMAGE -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Two Column Layout</title>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Karla', sans-serif;
+            background: #ffffff;
+        }
+
+        /* Two column layout */
+        .two-column-layout {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .left-column {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .right-column {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .pb-card {
+            width: 100%;
+            height: auto;
+            max-height: 374px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* Contact Form Styles */
+        .ctct-inline-form {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background: #ffffff !important;
+        }
+
+        .ctct-form-defaults[data-qe-id="form-background"] {
+            background-color: #F6F6F6 !important;
+            padding: 30px 40px !important;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 600px;
+            box-sizing: border-box;
+            border: none !important;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .ctct-form-defaults[data-qe-id="form-background"] p,
+        .ctct-form-defaults[data-qe-id="form-background"] .ctct-form-text {
+            color: #212121 !important;
+            text-align: center !important;
+            margin: 5px 0 15px !important;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 1.4 !important;
+            width: 100% !important;
+        }
+
+        .ctct-form-defaults[data-qe-id="form-background"] label {
+            color: #212121 !important;
+            text-align: left !important;
+            margin: 10px 20px;
+            font-weight: 600;
+            font-size: 16px;
+            display: block;
+        }
+
+        .ctct-form-defaults[data-qe-id="form-background"] input[type="email"],
+        .ctct-form-defaults[data-qe-id="form-background"] input[type="text"] {
+            width: 100% !important;
+            margin: 0 0 15px !important;
+            padding: 12px 15px !important;
+            height: 45px !important;
+            border: none !important;
+            border-radius: 4px !important;
+            background-color: #ffffff !important;
+            color: #212121 !important;
+            font-size: 16px !important;
+            box-sizing: border-box;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .ctct-form-defaults[data-qe-id="form-background"] input[type="email"]:focus,
+        .ctct-form-defaults[data-qe-id="form-background"] input[type="text"]:focus {
+            outline: none;
+            border-color: #000000 !important;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .ctct-form-defaults[data-qe-id="form-background"] button.ctct-form-button {
+            width: 100% !important;
+            max-width: 400px;
+            display: block;
+            margin: 30px auto;
+            padding: 24px 48px;
+            background-color: #212121 !important;
+            color: #ffffff !important;
+            border: 2px solid #212121 !important;
+            border-radius: 40px !important;
+            font-size: 24px !important;
+            font-weight: 600 !important;
+            cursor: pointer !important;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .ctct-form-defaults[data-qe-id="form-background"] button.ctct-form-button:hover {
+            background-color: #000000 !important;
+            transform: scale(1.05);
+        }
+
+        .ctct-form-defaults[data-qe-id="form-background"] .ctct-gdpr-text,
+        .ctct-form-defaults[data-qe-id="form-background"] .ctct-form-footer a,
+        .ctct-form-defaults[data-qe-id="form-background"] .ctct-form-footer-privacy-link {
+            color: #888888 !important;
+            text-align: center;
+            font-size: 11px;
+            display: block;
+            margin: 10px 20px;
+            line-height: 1.4;
+        }
+
+        .ctct-form-defaults[data-qe-id="form-background"] .ctct-form-errorMessage {
+            color: #212121 !important;
+            text-align: center;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .ctct-form-defaults[data-qe-id="form-background"] .ctct-form-header {
+            text-align: center !important;
+            width: 100% !important;
+        }
+
+        /* Responsive adjustments */
+        @media only screen and (max-width: 768px) {
+            .two-column-layout {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .left-column,
+            .right-column {
+                width: 100%;
+            }
+
+            .ctct-form-defaults[data-qe-id="form-background"] {
+                padding: 20px 25px !important;
+            }
+
+            .ctct-form-defaults[data-qe-id="form-background"] button.ctct-form-button {
+                font-size: 20px !important;
+                padding: 20px 36px;
+            }
+
+            .ctct-form-defaults[data-qe-id="form-background"] input[type="email"],
+            .ctct-form-defaults[data-qe-id="form-background"] input[type="text"] {
+                padding: 20px;
+                font-size: 16px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="two-column-layout">
+        <!-- Left column with image -->
+        <div class="left-column">
+            <img class="pb-card" src="https://alpha.uscreencdn.com/590xnull/assets%2Fpage-builder%2Fgroup-57.1731033932.png" alt="Feature Image">
+        </div>
+        
+        <!-- Right column with form -->
+        <div class="right-column">
+            <div class="ctct-inline-form" data-form-id="09441a92-a4c4-43ed-9dfc-c20c06a18351"></div>
+        </div>
+    </div>
+
+    <!-- Constant Contact Form Script -->
+    <script src="https://static.ctctcdn.com/js/signup-form-widget/current/signup-form-widget.min.js" async defer></script>
+</body>
+</html>
